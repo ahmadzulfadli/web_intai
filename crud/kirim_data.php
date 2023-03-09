@@ -37,6 +37,17 @@ if ($app->is_url_query('mode')) {
                 echo $app->error_handler($error);
             }
             break;
+        case 'delete':
+            if ($app->is_url_query('id')) {
+                $id = $app->get_url_query_value('id');
+                $app->delete_data($id);
+            } else {
+                $error = [
+                    'id' => 'required',
+                ];
+                echo $app->error_handler($error);
+            }
+            break;
     }
 } else {
     $app->read_json();

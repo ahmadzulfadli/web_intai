@@ -130,23 +130,22 @@ class Intai
         echo $this->execute_query($sql_query);
     }
 
-    /**
-     *function update_data($id, $update_data = [])
-     *{
-     *   $sql_query = "UPDATE data_intai SET " . $update_data['column'] . " = " . $update_data['value'] . " WHERE id = " . $id . "";
-     *  $this->execute_query($sql_query);
-     *}
 
-     *function delete_data($id)
-     *{
-     *   $sql_query = "DELETE FROM data_intai WHERE id = " . $id . "";
-     *   echo $this->execute_query($sql_query);
-     *}
+    /* function update_data($id, $update_data = [])
+    {
+        $sql_query = "UPDATE data_intai SET " . $update_data['column'] . " = " . $update_data['value'] . " WHERE id = " . $id . "";
+        $this->execute_query($sql_query);
+    } */
 
-     * Connection Section
-     * This section for RDBMS Operation Only
-     * 
-     */
+    function delete_data($id)
+    {
+        $sql_query = "DELETE FROM data_intai WHERE id = " . $id . "";
+        echo $this->execute_query($sql_query);
+    }
+
+    // Connection Section
+    // This section for RDBMS Operation Only
+
 
     function error_handler($params = [])
     {
